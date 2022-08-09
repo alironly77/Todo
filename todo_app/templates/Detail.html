@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'delete' todo.id %}" class="btn btn-outline-danger" style="font-family:Segoe Print ;">Delete</a>
+<a href="{% url 'update' todo.id %}" class="btn btn-outline-info" style="font-family:Segoe Print ;">Update</a>
+<h2 style="font-family:Segoe Print ;" >{{todo.Description}}</h2><hr>
+<h3 style="font-family:Segoe Print ;">{{todo.get_Status_Choices_display}}</h3><hr>
+<small style="font-family:Segoe Print ;">{{todo.Created}}</small>
+
+
+
+
+
+{% endblock %}
+

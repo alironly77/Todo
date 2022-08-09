@@ -1,10 +1,15 @@
-from re import M
-from turtle import title
-from venv import create
+
 from django.db import models
-from django.forms import CharField
+
 
 class Todo(models.Model):
-    title = models.CharField(max_length=64)
-    body = models.TextField()
-    created = models.DateTimeField()
+    STATUS_CHOICES = (
+        ("do", "Doing"),
+        ("F", "Finish"),
+        ("ns", "NotStarted")
+    )
+    Title = models.CharField(max_length=64)
+    Description = models.TextField()
+    Created = models.DateTimeField(auto_now_add=True)
+    Status_Choices = models.CharField(
+        max_length=2, choices=STATUS_CHOICES, default="ns")

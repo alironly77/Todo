@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css'%}" />
-  </head>
-  <body>
-    {%for i in all%}
-    <h1>{{i.title}}</h1>
-    {% endfor %}
-  </body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="card text-bg-danger mb-5" style="max-width: 20rem; font-style:calc();">
+    <h3><div class="card-header" style="font-family:Segoe Print ;">Detail</div></h3>
+    <div class="card-body">  
+{%for todo in todos%}
+<h1><a class="card-body"  href="{% url 'detail' todo.id %}" style="font-family:Segoe Print ;" >{{ todo.Title }}</a><br></h1>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
