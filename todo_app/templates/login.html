@@ -1,11 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <form method="post" novalidate>
-{% csrf_token %}
-<h5>{{ form.as_p }}</h5>
-
-<button class="btn btn-outline-info" type="submit" value="Login"> Login</button>
+  {% csrf_token %}
+  <div class="form-container">
+    <div class="login-icon-container">
+      <i class="fa fa-user-circle-o" style="color: #fff; font-size: 80px"></i>
+    </div>
+    <h3>LOGIN</h3>
+    {{ form.as_div }}
+    <button class="button" type="submit" value="Login">Login</button>
+  </div>
 </form>
 
 {% endblock %}
